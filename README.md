@@ -107,18 +107,17 @@ This section provides instructions for the model development phase.
 The dataset (satellite images and their corresponding masks) used in this project is based on the SpaceNet7 dataset.
 The original data is hosted at:
 
-``s3://spacenet-dataset/spacenet/SN7_buildings/``
+&lt;p align="center">
+&lt;img src="[suspicious link removed]" alt="Figure 1: An image and its corresponding mask sample from the SN7 dataset" width="80%">
+&lt;br>
+&lt;b>Figure 1: An image and its corresponding mask sample from the SN7 dataset&lt;/b>
+&lt;/p>
 
-
-.. figure:: https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/blob/main/SN7_images_masks/SN7_sample.PNG
-    :align: center
-
-    Figure1: An image and its corresponding mask sample from the SN7 dataset
-   
-.. figure:: https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/blob/main/SN7_images_masks/patchified%20samples.PNG
-    :align: center
-
-    Figure2: An image and its corresponding mask sample from the SN7 dataset
+&lt;p align="center">
+&lt;img src="[suspicious link removed]" alt="Figure 2: Patchified image and its corresponding mask sample from the SN7 dataset" width="80%">
+&lt;br>
+&lt;b>Figure 2: Patchified image and its corresponding mask sample from the SN7 dataset&lt;/b>
+&lt;/p>
 
   
  
