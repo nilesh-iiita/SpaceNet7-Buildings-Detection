@@ -1,6 +1,21 @@
 ======
 SpaceNet7 Buildings Detection
+[Original repo](https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/tree/main)
+This repo contains an updated Pytorch framework.
 ======
+
+> [!NOTE]
+> -----
+matplotlib          3.10.3
+monai               1.4.0
+numpy               1.26.4
+session_info        v1.0.1
+torch               2.7.0+cu128
+-----
+Python 3.11.12 | packaged by conda-forge | (main, Apr 10 2025, 22:23:25) [GCC 13.3.0]
+Linux-6.14.6-300.fc42.x86_64-x86_64-with-glibc2.41
+-----
+Session information updated at 2025-05-16 00:32
 
 
 **Content**
