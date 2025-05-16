@@ -123,42 +123,44 @@ The original data is hosted at:
  
 **Prepare environment**
 
-.. code:: python
+```bash
 
   # install MONAI 
   pip install monai  
+```
 
-
-.. code:: python
+```python
 
   # import the necessary libraries
   import torch
   import matplotlib.pyplot as plt
   import numpy as np
+```
 
-.. code:: python
+```python
 
   # git clone source
   !git clone https://github.com/Rim-chan/SpaceNet7-Buildings-Detection.git
-
+```
 
 **Train segmentation model**
 
-.. code:: python
+```python
 
   !python ./SpaceNet7-Buildings-Detection/scripts/main.py --base_dir "../input/SpaceNet7_curated_dataset" --num_epochs 10 --exec_mode 'train'
+```
 
 **Test segmentation model**
 
-.. code:: python
+```python
 
   !python ./SpaceNet7-Buildings-Detection/scripts/main.py --base_dir "../input/SpaceNet7_curated_dataset" --exec_mode 'evaluate' --ckpt_path './last.ckpt'
-
+```
 
 
 **Load and display some samples**
 
-.. code:: python
+```python
 
   preds = np.load('./predictions.npy')   #(6, 1, 1024, 1024)
   lbls = np.load('./labels.npy')         #(6, 1, 1024, 1024)
@@ -167,11 +169,10 @@ The original data is hosted at:
   fig, ax = plt.subplots(1,2, figsize = (20,10)) 
   ax[0].imshow(preds[3][0], cmap='gray') 
   ax[1].imshow(lbls[3][0], cmap='gray') 
+```
 
+![](https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/blob/main/SN7_images_masks/OUTPUT.PNG)
 
-.. figure:: https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/blob/main/SN7_images_masks/OUTPUT.PNG
-    :align: center
-.. figure:: https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/blob/main/SN7_images_masks/OUTPUT2.PNG
-    :align: center
+![](https://github.com/Rim-chan/SpaceNet7-Buildings-Detection/blob/main/SN7_images_masks/OUTPUT2.PNG)
 
     Figure3: UNet predictions and its corresponding ground truth masks 
