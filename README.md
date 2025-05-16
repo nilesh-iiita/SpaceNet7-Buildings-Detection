@@ -7,6 +7,7 @@
 > This repo contains an updated Pytorch framework.
 
 > [!NOTE]
+> ```
 > matplotlib          3.10.3
 > monai               1.4.0
 > numpy               1.26.4
@@ -17,6 +18,7 @@
 > Linux-6.14.6-300.fc42.x86_64-x86_64-with-glibc2.41
 > -----
 > Session information updated at 2025-05-16 00:32
+>```
 
 
 **Content**
