@@ -41,24 +41,54 @@ class Unet(pl.LightningModule):
         np.save(self.args.save_path + 'predictions.npy', preds_np)
         np.save(self.args.save_path + 'labels.npy', lbl_np)
 
-    def training_epoch_end(self, outputs):
+    # def training_epoch_end(self, outputs):
+    #     torch.cuda.empty_cache()
+    #     gc.collect()
+        
+    # NEW (for PL 2.0+)
+    def on_train_epoch_end(self): # Removed 'outputs' argument
         torch.cuda.empty_cache()
         gc.collect()
         
-    def validation_epoch_end(self, outputs):
+    # def validation_epoch_end(self, outputs):
+    #     dice, loss = self.dice.compute()
+    #     dice_mean = dice.item()
+    #     self.dice.reset()
+        
+    #     if dice_mean >= self.best_dice_mean:
+    #         self.best_mean_dice = dice_mean
+            
+                
+    #     metrics = {}
+    #     metrics.update({"Mean_Dice": round(dice_mean, 2)})
+    #     metrics.update({"Highest": round(self.best_dice_mean, 2)})
+    #     metrics.update({"val_loss": round(loss.item(), 4)})
+        
+    #     print(f"Val_Performace: Mean_Dice {metrics['Mean_Dice']}, Val_Loss {metrics['val_loss']}")
+    #     self.log("dice_mean", dice_mean)
+    #     torch.cuda.empty_cache()
+    #     gc.collect()
+
+    # OLD (causes error in PL 2.0+)
+    # def validation_epoch_end(self, outputs):
+    #     # ... code ...
+    #     pass
+
+    # NEW (for PL 2.0+)
+    def on_validation_epoch_end(self): # Removed 'outputs' argument
         dice, loss = self.dice.compute()
         dice_mean = dice.item()
         self.dice.reset()
-        
+
         if dice_mean >= self.best_dice_mean:
-            self.best_mean_dice = dice_mean
-            
-                
+             self.best_mean_dice = dice_mean
+
+
         metrics = {}
         metrics.update({"Mean_Dice": round(dice_mean, 2)})
         metrics.update({"Highest": round(self.best_dice_mean, 2)})
         metrics.update({"val_loss": round(loss.item(), 4)})
-        
+
         print(f"Val_Performace: Mean_Dice {metrics['Mean_Dice']}, Val_Loss {metrics['val_loss']}")
         self.log("dice_mean", dice_mean)
         torch.cuda.empty_cache()

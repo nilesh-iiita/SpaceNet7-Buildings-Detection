@@ -8,5 +8,5 @@ scikit-image
 torchvision
 monai
 torchmetrics
-sklearn
+scikit-learn #sklearn
 pytorch_lightning
