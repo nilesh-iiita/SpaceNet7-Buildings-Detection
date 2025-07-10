@@ -1,2 +1,4 @@
 *.ckpt
 data/*
+results
+*.npy
